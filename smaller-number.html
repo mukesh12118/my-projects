@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+
+    <script>
+           let array=[1,2,3,40]
+
+let small =''
+
+let hello=(value)=>{
+
+    for(let i=0;i<array.length;i--){
+
+        if(value[i]<small){
+            small = value[i]
+        }
+    }
+    return small
+}
+console.log(hello(array))
+    </script>
+</body>
+</html>

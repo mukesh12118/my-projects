@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+        }
+
+        img {
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="container">
+            <img src="../images2/img11.jpg" alt="" id="mainimg">
+        </div>
+    </div>
+    <button id="prevbtn">prev</button>
+    <button id="nextbtn">next</button>
+
+    <script>
+        let container = document.getElementById('container')
+        let prevbtn = document.getElementById('prevbtn')
+        let nextbtn = document.getElementById('nextbtn')
+
+
+        let allimages = [{
+            img: "../images2/img11.jpg"
+        }, {
+            img: "../images2/img12.jpg"
+        }, {
+            img: "../images2/img13.jpg"
+        }, {
+            img: '../images2/img14.jpg'
+        }]
+
+    
+
+
+        let counter = 1
+        
+
+        mainimg= document.getElementById('mainimg')
+
+        
+        // newimage.src = allimages
+
+
+        nextbtn.addEventListener('click', () => {
+
+            mainimg.src = allimages[counter].img
+            counter++
+            if(counter==allimages.length){
+                counter=0
+            }
+            
+
+        })
+
+        prevbtn.addEventListener('click',()=>{
+            if(counter==0){
+                counter= allimages.length
+            }
+            
+            counter --
+
+            mainimg.src = allimages[counter].img
+        })
+
+
+
+    </script>
+</body>
+
+</html>

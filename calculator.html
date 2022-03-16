@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(173, 173, 173);
+        }
+
+        .innerdiv{
+            display: grid;
+            height: fit-content;
+            background-color: brown;
+            border-radius: 25px;
+            padding: 35px;
+        }
+
+        input{
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 25px;
+            font-size: 25px;
+            text-align: end;
+        }
+        .btn{
+            display: grid;
+            grid-template-columns: repeat(4,3fr);
+
+        }
+        button{
+            display: grid;
+            padding: 10px;
+            margin: 10px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="innerdiv">
+
+            <input type="text" id="inputid" >
+
+            <div class="btn">
+                <button id="onebyne">Clr</button>
+                <button onclick="dell('del')">DEL</button>
+                <button onclick="display('%')">%</button>
+                <button onclick="display('/')">/</button>
+                <button onclick="display('9')">9</button>
+                <button onclick="display('8')">8</button>
+                <button onclick="display('7')">7</button>
+                <button onclick="display('*')">*</button>
+                <button onclick="display('6')">6</button>
+                <button onclick="display('5')">5</button>
+                <button onclick="display('4')">4</button>
+                <button onclick="display('+')">+</button>
+                <button onclick="display('3')">3</button>
+                <button onclick="display('2')">2</button>
+                <button onclick="display('1')">1</button>
+                <button onclick="display('0')">0</button>
+                <button onclick="display('-')">-</button>
+                <button onclick="display('.')">.</button>
+                <button class="equalbtn" onclick="calculate('=')">=</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let inputid= document.getElementById('inputid')
+        let onebyone= document.getElementById('onebyne')
+        
+        onebyone.addEventListener('click',function(){
+            inputid.value=""
+        })
+
+
+
+        function display (inp){
+            inputid.value=inputid.value+inp
+        }
+
+        function calculate(){
+            inputid.value=eval(inputid.value)
+        }
+
+        function dell(){
+  inputid.value= inputid.value.slice(0,-1)
+        }
+
+    </script>
+</body>
+</html>
